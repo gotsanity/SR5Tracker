@@ -47,6 +47,11 @@ namespace SR5Tracker
             if (_CombatTurn.Count < 1)
             {
                 gridCombat.DataSource = null;
+                if (bIsCombatStarted)
+                {
+                    bIsCombatStarted = false;
+                    EndCombat();
+                }
                 return;
             }
 
@@ -77,9 +82,10 @@ namespace SR5Tracker
 
         private void RemoveCharacterEvent(object sender, CharacterEventArgs e)
         {
-            Initiative target = _CombatTurn.Find(c => c.Character == e.Data);
+            Initiative target = _CombatTurn.Find(c => c.Character.Name == e.Data.Name);
             _CombatTurn.Remove(target);
-            _characters.Remove(e.Data);
+            Character character = _characters.Find(c => c.Name == e.Data.Name);
+            _characters.Remove(character);
             UpdateCombat();
         }
 

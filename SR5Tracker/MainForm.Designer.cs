@@ -130,16 +130,16 @@
             this.flowCharacters.AutoScrollMinSize = new System.Drawing.Size(10, 10);
             this.flowCharacters.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowCharacters.Location = new System.Drawing.Point(12, 72);
-            this.flowCharacters.MinimumSize = new System.Drawing.Size(533, 366);
+            this.flowCharacters.MinimumSize = new System.Drawing.Size(400, 366);
             this.flowCharacters.Name = "flowCharacters";
-            this.flowCharacters.Size = new System.Drawing.Size(533, 366);
+            this.flowCharacters.Size = new System.Drawing.Size(400, 366);
             this.flowCharacters.TabIndex = 2;
             this.flowCharacters.WrapContents = false;
             // 
             // btnEndPass
             // 
             this.btnEndPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEndPass.Location = new System.Drawing.Point(556, 415);
+            this.btnEndPass.Location = new System.Drawing.Point(418, 415);
             this.btnEndPass.Name = "btnEndPass";
             this.btnEndPass.Size = new System.Drawing.Size(114, 23);
             this.btnEndPass.TabIndex = 4;
@@ -166,13 +166,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridCombat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridCombat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridCombat.Location = new System.Drawing.Point(556, 72);
+            this.gridCombat.Location = new System.Drawing.Point(418, 72);
+            this.gridCombat.MinimumSize = new System.Drawing.Size(378, 337);
             this.gridCombat.Name = "gridCombat";
             this.gridCombat.ReadOnly = true;
             this.gridCombat.RowHeadersVisible = false;
             this.gridCombat.RowTemplate.Height = 25;
             this.gridCombat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCombat.Size = new System.Drawing.Size(240, 337);
+            this.gridCombat.Size = new System.Drawing.Size(378, 337);
             this.gridCombat.TabIndex = 6;
             // 
             // MainForm

@@ -26,8 +26,8 @@ namespace SR5Tracker
         private void CharacterControl_Load(object sender, EventArgs e)
         {
             lblName.Text = _character.Name;
-            lblPhys.Text = _character.PhysicalHealth.ToString();
-            lblStun.Text = _character.StunHealth.ToString();
+            lblStun.DataBindings.Add(new Binding("Text", _character, "StunHealth"));
+            lblPhys.DataBindings.Add(new Binding("Text", _character, "PhysicalHealth"));
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -45,6 +45,25 @@ namespace SR5Tracker
             if (CharacterControlAddInit_Click != null)
             {
                 CharacterControlAddInit_Click(sender, new CharacterEventArgs() { Data = _character });
+            }
+        }
+
+        private void btnModifyHealth_Click(object sender, EventArgs e)
+        {
+            using (EditHealthForm frm = new EditHealthForm(_character))
+            {
+                var result = frm.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    _character.PhysicalHealth = frm._character.PhysicalHealth;
+                    _character.StunHealth = frm._character.StunHealth;
+                }
+            }
+
+            if (_character.PhysicalHealth <= 0)
+            {
+                MessageBox.Show(_character.Name + " has died.");
+                btnRemove_Click(this, new EventArgs());
             }
         }
     }

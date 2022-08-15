@@ -109,6 +109,7 @@
             this.btnModifyHealth.TabIndex = 13;
             this.btnModifyHealth.Text = "Edit Health";
             this.btnModifyHealth.UseVisualStyleBackColor = true;
+            this.btnModifyHealth.Click += new System.EventHandler(this.btnModifyHealth_Click);
             // 
             // btnAddInit
             // 
