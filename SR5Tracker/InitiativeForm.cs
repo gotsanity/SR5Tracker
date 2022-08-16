@@ -22,6 +22,21 @@ namespace SR5Tracker
             InitializeComponent();
         }
 
+        public void SetExisting(Initiative values)
+        {
+            switch (values.Type)
+            {
+                case InitiativeType.Physical:
+                    rbPhysical.Checked = true; break;
+                case InitiativeType.Matrix:
+                    rbMatrix.Checked = true; break;
+                default:
+                    rbAstral.Checked = true; break;
+            }
+
+            numRoll.Value = values.Value;
+        }
+
         private void btnOk_Click(object sender, EventArgs e)
         {
             if (rbPhysical.Checked)

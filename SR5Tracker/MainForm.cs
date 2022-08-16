@@ -24,6 +24,14 @@ namespace SR5Tracker
             using (var form = new InitiativeForm(target))
             {
                 form.Character = target;
+
+                Initiative existing = _CombatTurn.Find(i => i.Name == target.Name);
+
+                if (existing != null)
+                {
+                    form.SetExisting(existing);
+                }
+                
                 var result = form.ShowDialog();
                 if (result == DialogResult.OK)
                 {
@@ -36,7 +44,10 @@ namespace SR5Tracker
                     }
                     else
                     {
-                        MessageBox.Show(initiative.Name + " already exists in the initative pool.");
+                        int index = _CombatTurn.FindIndex(i => i.Name.Equals(initiative.Name, StringComparison.OrdinalIgnoreCase));
+                        _CombatTurn[index].Type = form.InitiativeType;
+                        _CombatTurn[index].Value = form.InitiativeValue;
+                        UpdateCombat();
                     }
                 }
             }
@@ -55,6 +66,7 @@ namespace SR5Tracker
                 return;
             }
 
+            _CombatTurn = _CombatTurn.Where(i => i.Value > 0).ToList();
             _CombatTurn = _CombatTurn.OrderByDescending(c => c.Value).ToList();
             gridCombat.DataSource = _CombatTurn;
             if (gridCombat.Columns.Contains("Character"))
@@ -75,6 +87,7 @@ namespace SR5Tracker
             };
             CharacterControl character = new CharacterControl(newCharacter);
             character.CharacterControlAddInit_Click += new EventHandler<CharacterEventArgs>(AddInitiativeEvent);
+            character.CharacterControlModifyInit_Click += new EventHandler<CharacterEventArgs>(AddInitiativeEvent);
             character.CharacterControlRemoveCharacter_Click += new EventHandler<CharacterEventArgs>(RemoveCharacterEvent);
             _characters.Add(newCharacter);
             flowCharacters.Controls.Add(character);

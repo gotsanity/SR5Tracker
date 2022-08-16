@@ -67,16 +67,36 @@
             // numStun
             // 
             this.numStun.Location = new System.Drawing.Point(377, 24);
+            this.numStun.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numStun.Name = "numStun";
             this.numStun.Size = new System.Drawing.Size(42, 23);
             this.numStun.TabIndex = 7;
+            this.numStun.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // numPhys
             // 
             this.numPhys.Location = new System.Drawing.Point(292, 24);
+            this.numPhys.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numPhys.Name = "numPhys";
             this.numPhys.Size = new System.Drawing.Size(42, 23);
             this.numPhys.TabIndex = 0;
+            this.numPhys.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // lblStun
             // 
@@ -132,14 +152,14 @@
             this.flowCharacters.Location = new System.Drawing.Point(12, 72);
             this.flowCharacters.MinimumSize = new System.Drawing.Size(400, 366);
             this.flowCharacters.Name = "flowCharacters";
-            this.flowCharacters.Size = new System.Drawing.Size(400, 366);
+            this.flowCharacters.Size = new System.Drawing.Size(400, 487);
             this.flowCharacters.TabIndex = 2;
             this.flowCharacters.WrapContents = false;
             // 
             // btnEndPass
             // 
             this.btnEndPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEndPass.Location = new System.Drawing.Point(418, 415);
+            this.btnEndPass.Location = new System.Drawing.Point(418, 536);
             this.btnEndPass.Name = "btnEndPass";
             this.btnEndPass.Size = new System.Drawing.Size(114, 23);
             this.btnEndPass.TabIndex = 4;
@@ -150,7 +170,7 @@
             // btnEndCombat
             // 
             this.btnEndCombat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEndCombat.Location = new System.Drawing.Point(687, 415);
+            this.btnEndCombat.Location = new System.Drawing.Point(687, 536);
             this.btnEndCombat.Name = "btnEndCombat";
             this.btnEndCombat.Size = new System.Drawing.Size(109, 23);
             this.btnEndCombat.TabIndex = 5;
@@ -173,14 +193,14 @@
             this.gridCombat.RowHeadersVisible = false;
             this.gridCombat.RowTemplate.Height = 25;
             this.gridCombat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCombat.Size = new System.Drawing.Size(378, 337);
+            this.gridCombat.Size = new System.Drawing.Size(378, 458);
             this.gridCombat.TabIndex = 6;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 571);
             this.Controls.Add(this.gridCombat);
             this.Controls.Add(this.btnEndCombat);
             this.Controls.Add(this.btnEndPass);

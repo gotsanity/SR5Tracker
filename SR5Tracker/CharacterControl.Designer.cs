@@ -36,6 +36,7 @@
             this.lblPhys = new System.Windows.Forms.Label();
             this.btnModifyHealth = new System.Windows.Forms.Button();
             this.btnAddInit = new System.Windows.Forms.Button();
+            this.btnEditInit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblName
@@ -72,7 +73,7 @@
             // btnRemove
             // 
             this.btnRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRemove.Location = new System.Drawing.Point(284, 1);
+            this.btnRemove.Location = new System.Drawing.Point(349, 1);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(20, 23);
             this.btnRemove.TabIndex = 10;
@@ -103,7 +104,7 @@
             // btnModifyHealth
             // 
             this.btnModifyHealth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModifyHealth.Location = new System.Drawing.Point(138, 32);
+            this.btnModifyHealth.Location = new System.Drawing.Point(113, 32);
             this.btnModifyHealth.Name = "btnModifyHealth";
             this.btnModifyHealth.Size = new System.Drawing.Size(75, 23);
             this.btnModifyHealth.TabIndex = 13;
@@ -114,7 +115,7 @@
             // btnAddInit
             // 
             this.btnAddInit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddInit.Location = new System.Drawing.Point(219, 32);
+            this.btnAddInit.Location = new System.Drawing.Point(284, 32);
             this.btnAddInit.Name = "btnAddInit";
             this.btnAddInit.Size = new System.Drawing.Size(85, 23);
             this.btnAddInit.TabIndex = 14;
@@ -122,11 +123,23 @@
             this.btnAddInit.UseVisualStyleBackColor = true;
             this.btnAddInit.Click += new System.EventHandler(this.btnAddInit_Click);
             // 
+            // btnEditInit
+            // 
+            this.btnEditInit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditInit.Location = new System.Drawing.Point(194, 32);
+            this.btnEditInit.Name = "btnEditInit";
+            this.btnEditInit.Size = new System.Drawing.Size(84, 23);
+            this.btnEditInit.TabIndex = 15;
+            this.btnEditInit.Text = "Edit Initiative";
+            this.btnEditInit.UseVisualStyleBackColor = true;
+            this.btnEditInit.Click += new System.EventHandler(this.btnEditInit_Click);
+            // 
             // CharacterControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.Controls.Add(this.btnEditInit);
             this.Controls.Add(this.btnAddInit);
             this.Controls.Add(this.btnModifyHealth);
             this.Controls.Add(this.lblStun);
@@ -137,7 +150,7 @@
             this.Controls.Add(this.lblName);
             this.Name = "CharacterControl";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Size = new System.Drawing.Size(307, 60);
+            this.Size = new System.Drawing.Size(372, 60);
             this.Load += new System.EventHandler(this.CharacterControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -154,5 +167,6 @@
         private Label lblPhys;
         private Button btnModifyHealth;
         private Button btnAddInit;
+        private Button btnEditInit;
     }
 }

@@ -15,6 +15,7 @@ namespace SR5Tracker
         private Character _character { get; set; }
 
         public event EventHandler<CharacterEventArgs> CharacterControlAddInit_Click;
+        public event EventHandler<CharacterEventArgs> CharacterControlModifyInit_Click;
         public event EventHandler<CharacterEventArgs> CharacterControlRemoveCharacter_Click;
 
         public CharacterControl(Character character)
@@ -64,6 +65,14 @@ namespace SR5Tracker
             {
                 MessageBox.Show(_character.Name + " has died.");
                 btnRemove_Click(this, new EventArgs());
+            }
+        }
+
+        private void btnEditInit_Click(object sender, EventArgs e)
+        {
+            if (CharacterControlModifyInit_Click != null)
+            {
+                CharacterControlModifyInit_Click(sender, new CharacterEventArgs() { Data = _character });
             }
         }
     }
