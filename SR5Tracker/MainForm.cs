@@ -1,3 +1,4 @@
+using System.Collections.Specialized;
 using System.Linq;
 
 namespace SR5Tracker
@@ -11,7 +12,42 @@ namespace SR5Tracker
 
         public MainForm()
         {
+            StringCollection characters = Properties.Settings.Default.Characters;
+            
+            foreach (String item in characters)
+            {
+                _characters.Add(DeserializeCharacter(item.Split('\u002C')));
+            }
             InitializeComponent();
+            LoadCharacters();
+        }
+
+        private void LoadCharacters()
+        {
+            foreach (Character item in _characters)
+            {
+                CharacterControl character = new CharacterControl(item);
+                character.CharacterControlAddInit_Click += new EventHandler<CharacterEventArgs>(AddInitiativeEvent);
+                character.CharacterControlModifyInit_Click += new EventHandler<CharacterEventArgs>(AddInitiativeEvent);
+                character.CharacterControlRemoveCharacter_Click += new EventHandler<CharacterEventArgs>(RemoveCharacterEvent);
+                flowCharacters.Controls.Add(character);
+            }
+        }
+
+        private Character DeserializeCharacter(String[] data)
+        {
+            Character character = new Character();
+
+
+
+            character.Name = data[0];
+            character.PhysicalHealth = Convert.ToInt32(data[1]);
+            character.PhysicalHealthMax = Convert.ToInt32(data[2]);
+            character.StunHealth = Convert.ToInt32(data[3]);
+            character.StunHealthMax = Convert.ToInt32(data[4]);
+            character.IsEnemy = Convert.ToBoolean(data[5]);
+
+            return character;
         }
 
         private void AddInitiativeEvent(object sender, CharacterEventArgs e)
@@ -91,6 +127,8 @@ namespace SR5Tracker
             character.CharacterControlRemoveCharacter_Click += new EventHandler<CharacterEventArgs>(RemoveCharacterEvent);
             _characters.Add(newCharacter);
             flowCharacters.Controls.Add(character);
+
+            
 
             txtNewCharacter.Text = "";
             numPhys.Value = 1;
