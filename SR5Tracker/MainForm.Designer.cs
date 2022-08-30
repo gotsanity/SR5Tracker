@@ -74,12 +74,13 @@
             0});
             this.numStun.Name = "numStun";
             this.numStun.Size = new System.Drawing.Size(42, 23);
-            this.numStun.TabIndex = 7;
+            this.numStun.TabIndex = 2;
             this.numStun.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.numStun.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNewCharacter_KeyPress);
             // 
             // numPhys
             // 
@@ -91,12 +92,13 @@
             0});
             this.numPhys.Name = "numPhys";
             this.numPhys.Size = new System.Drawing.Size(42, 23);
-            this.numPhys.TabIndex = 0;
+            this.numPhys.TabIndex = 1;
             this.numPhys.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.numPhys.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNewCharacter_KeyPress);
             // 
             // lblStun
             // 
@@ -130,7 +132,7 @@
             this.btnAddNew.Location = new System.Drawing.Point(421, 24);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(112, 23);
-            this.btnAddNew.TabIndex = 1;
+            this.btnAddNew.TabIndex = 3;
             this.btnAddNew.Text = "Add New";
             this.btnAddNew.UseVisualStyleBackColor = true;
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
@@ -141,6 +143,7 @@
             this.txtNewCharacter.Name = "txtNewCharacter";
             this.txtNewCharacter.Size = new System.Drawing.Size(193, 23);
             this.txtNewCharacter.TabIndex = 0;
+            this.txtNewCharacter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNewCharacter_KeyPress);
             // 
             // flowCharacters
             // 
@@ -195,6 +198,7 @@
             this.gridCombat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridCombat.Size = new System.Drawing.Size(378, 458);
             this.gridCombat.TabIndex = 6;
+            this.gridCombat.TabStop = false;
             // 
             // MainForm
             // 

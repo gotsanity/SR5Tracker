@@ -91,6 +91,11 @@ namespace SR5Tracker
             character.CharacterControlRemoveCharacter_Click += new EventHandler<CharacterEventArgs>(RemoveCharacterEvent);
             _characters.Add(newCharacter);
             flowCharacters.Controls.Add(character);
+
+            txtNewCharacter.Text = "";
+            numPhys.Value = 1;
+            numStun.Value = 1;
+            txtNewCharacter.Focus();
         }
 
         private void RemoveCharacterEvent(object sender, CharacterEventArgs e)
@@ -151,6 +156,14 @@ namespace SR5Tracker
 
             btnEndCombat.Text = "End Combat";
             bIsCombatStarted = true;
+        }
+
+        private void txtNewCharacter_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnAddNew_Click(sender, e);
+            }
         }
     }
 }
