@@ -119,6 +119,7 @@
             this.numRoll.Name = "numRoll";
             this.numRoll.Size = new System.Drawing.Size(62, 23);
             this.numRoll.TabIndex = 5;
+            this.numRoll.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnEnterKeypress);
             // 
             // btnOk
             // 

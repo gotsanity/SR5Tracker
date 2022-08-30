@@ -118,7 +118,7 @@
             this.btnAddInit.Location = new System.Drawing.Point(284, 32);
             this.btnAddInit.Name = "btnAddInit";
             this.btnAddInit.Size = new System.Drawing.Size(85, 23);
-            this.btnAddInit.TabIndex = 14;
+            this.btnAddInit.TabIndex = 15;
             this.btnAddInit.Text = "Add Initiative";
             this.btnAddInit.UseVisualStyleBackColor = true;
             this.btnAddInit.Click += new System.EventHandler(this.btnAddInit_Click);
@@ -129,7 +129,7 @@
             this.btnEditInit.Location = new System.Drawing.Point(194, 32);
             this.btnEditInit.Name = "btnEditInit";
             this.btnEditInit.Size = new System.Drawing.Size(84, 23);
-            this.btnEditInit.TabIndex = 15;
+            this.btnEditInit.TabIndex = 14;
             this.btnEditInit.Text = "Edit Initiative";
             this.btnEditInit.UseVisualStyleBackColor = true;
             this.btnEditInit.Click += new System.EventHandler(this.btnEditInit_Click);

@@ -71,5 +71,13 @@ namespace SR5Tracker
         {
             lblCharacterName.Text = Character.Name;
         }
+
+        private void OnEnterKeypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnOk_Click(sender, e);
+            }
+        }
     }
 }
